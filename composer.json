@@ -1,0 +1,11 @@
+{
+    "name": "user/suborno",
+    "autoload": {
+        "psr-4": {
+            "User\\Suborno\\": "src/"
+        }
+    },
+    "require": {
+        "stripe/stripe-php": "^13.4"
+    }
+}
