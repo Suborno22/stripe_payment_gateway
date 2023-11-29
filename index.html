@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Front Page</title>
+</head>
+<body>
+    <h1>Contents</h1>
+    <ul>
+        <ul>
+            <li onclick="redirectToCheckout('babydoll',20000)" id="item">Baby Doll <p id="price">price: <b>Rs 20,000</b></p></li>
+            <li onclick="redirectToCheckout('cup',4000)" id="item">Cup<p id="price">price: <b>Rs 4,000</b></p></li>
+            <li onclick="redirectToCheckout('basket',200)" id="item">Basket<p id="price">price: <b>Rs 200</b></p></li>
+            <li onclick="redirectToCheckout('trouser',600)" id="item">Trouser<p id="price">price: <b>Rs 600</b></p></li>
+        </ul>
+        
+    </ul>
+
+    <script>
+        function redirectToCheckout(item, price) {
+        var checkoutUrl = 'http://localhost/suborno/buy_item.php?item=' + item + "&price=" + price;
+        window.location.href = checkoutUrl;
+    }
+
+    </script>
+</body>
+</html>
