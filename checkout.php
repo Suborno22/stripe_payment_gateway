@@ -8,19 +8,20 @@ $sk = "sk_test_51NqCvMSFUB8hRccu7R1yLWaRLnuI3LDvfsfw7k7B8bQz6m9WFhAZ2SX9A8WVk26c
 $item = $_GET['item'];
 $price = $_GET['price'];
 
+// echo $item,$price;
+
 // Create the checkout session
 $checkout_session = \Stripe\Checkout\Session::create([
     "mode" => "payment",
-    "success_url" => "http://localhost/suborno/success.php",
+    "success_url" => "http://stripe_payment_gateway.dvl.to/success.php",
     "line_items" => [
         [
             "quantity" => 1,
             "price_data" => [
                 "currency" => "INR",
-                "unit_amount"=> floatval($price) * 100,
+                "unit_amount"=> ($price) * 100,
                 "product_data" => [
                     "name" => $item,
-
                 ],
             ],
         ],
@@ -29,7 +30,7 @@ $checkout_session = \Stripe\Checkout\Session::create([
 
 // Redirect to checkout page
 http_response_code(303);
-header("Location:" . $checkout_session->url);
+header("Location:".$checkout_session->url);
 // Add this in your checkout.php for debugging
 error_log("Checkout session created successfully: " . $checkout_session->id);
 ?>

@@ -3,27 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Alkatra' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <title>Front Page</title>
+    <title>Variant Basket</title>
 </head>
 <body>
-    <h1>Contents</h1>
-    <ul>
-        <ul>
-            <li onclick="redirectToCheckout('babydoll',20000)" id="item">Baby Doll <p id="price">price: <b>Rs 20,000</b></p></li>
-            <li onclick="redirectToCheckout('cup',4000)" id="item">Cup<p id="price">price: <b>Rs 4,000</b></p></li>
-            <li onclick="redirectToCheckout('basket',200)" id="item">Basket<p id="price">price: <b>Rs 200</b></p></li>
-            <li onclick="redirectToCheckout('trouser',600)" id="item">Trouser<p id="price">price: <b>Rs 600</b></p></li>
+    <header class="container">
+        <img src="/images/logo.png" class="logo">
+        <div class="header-content">
+            <h1>Variant Basket</h1>
+            <p>Welcome to our online store! <br>
+              Find the perfect items for you.</p>
+        </div>
+     </header>
+     
+    <div>
+        <br>Our History <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati dolorum, eaque distinctio soluta tempora quisquam aspernatur odit eum corporis nobis, aut rerum optio veritatis aperiam facere libero blanditiis deserunt! Eligendi.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, esse. Officiis delectus impedit officia sapiente vitae, harum nemo mollitia assumenda repellendus. Quos, facilis reprehenderit dignissimos soluta reiciendis illo ullam eius!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum soluta iusto eligendi exercitationem voluptate impedit nemo, vitae alias optio amet illo asperiores ut qui quisquam voluptatum quae architecto beatae! Assumenda?
+    </div>
+    <main>
+        <h2>New Arrivals</h2>
+        <ul class="item-list">
+            <li onclick="redirectToCheckout('babydoll', 20000)">
+                
+                <img class="flexible-image" src="./images/doll.webp" alt="Baby Doll">
+                <div class="item-details">
+                    <h3>Baby Doll</h3>
+                    <p class="price">Price: <b>Rs 20,000</b></p>
+                </div>
+             
+            </li>
+
+            <li onclick="redirectToCheckout('cup', 4000)">
+                
+                <img class="flexible-image" src="/images/cups.jpg" alt="Cup">
+                <div class="item-details">
+                    <h3>Cup</h3>
+                    <p class="price">Price: <b>Rs 4,000</b></p>
+                </div>
+              
+            </li>
+
+            <li onclick="redirectToCheckout('basket', 200)">
+                
+                <img class="flexible-image" src="/images/basket.webp" alt="Basket">
+                <div class="item-details">
+                    <h3>Basket</h3>
+                    <p class="price">Price: <b>Rs 200</b></p>
+                </div>
+            
+            </li>
+
+            <li onclick="redirectToCheckout('trouser', 600)">
+            
+                <img class="flexible-image" src="/images/nail_polish.jpg" alt="Nail Polish">
+                <div class="item-details">
+                    <h3>Trouser</h3>
+                    <p class="price">Price: <b>Rs 600</b></p>
+                </div>
+              
+            </li>
         </ul>
-        
-    </ul>
+    </main>
 
     <script>
         function redirectToCheckout(item, price) {
-        var checkoutUrl = 'http://localhost/suborno/buy_item.php?item=' + item + "&price=" + price;
-        window.location.href = checkoutUrl;
-    }
-
+            var checkoutUrl = 'buy_item.php?item=' + item + "&price=" + price;
+            window.location.href = checkoutUrl;
+        }
     </script>
 </body>
 </html>
