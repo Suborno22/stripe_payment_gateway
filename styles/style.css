@@ -1,0 +1,286 @@
+*{
+    box-sizing: border-box;
+    padding: 12px;
+    width: auto;
+}
+
+body span{
+    position: fixed !important;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed !important;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    padding-left: 0;
+    padding-right: 0;
+}
+  
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+  
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+body
+{
+    background-color: bisque;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Alkatra';
+    font-size: 22px;
+    background-color: rgb(219, 200, 200);
+}
+  
+header .logo{
+    width: 20%;
+    height: auto;
+    padding-right: 10px;
+}
+  
+header .header-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+  
+header .header-content h1, header .header-content p{
+    font-style: italic;
+    color: rgb(129, 79, 79);
+    padding-right: 192px;
+}
+  
+header .header-content h1{
+    padding-top: .01em;
+}
+
+body h2{
+    font-family: 'Alkatra','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 40px;    
+}
+body p{
+    font-family: 'Alkatra','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+}
+main {
+    display: flex;
+    flex-direction: row;
+}
+main .item-details{
+    font-style:oblique;
+    text-align: center;
+    color: rgb(138, 23, 23);
+    border: 2px solid white;
+}
+.item-details h3{
+    font-size: 25px;
+}
+main ul.scroll-container {
+    list-style: none;
+    background-color: #d1a5a5;
+    overflow-x: auto;
+    display: flex;
+    padding: 30px;
+    max-width: 100%;
+    border: 12px solid white;
+}
+
+main ul.scroll-container li {
+    flex-grow: 1;
+}
+
+main ul.scroll-container li img {
+    padding: 5px;
+    max-width: 300px;
+}
+
+footer {
+    background-color: #e0f5bd;
+    padding: 20px;
+    text-align: left;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+b {
+    font-weight: bold;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+.scroll-container {
+    flex: 1;
+}
+  
+  /* .scroll-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.scroll-buttons button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    justify-content: space-between;
+} */
+.telephone {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+    padding: 8px;
+    border: 10px solid blue;
+    background-color: blue;
+    color: white;
+    font-size: 12vp;
+    text-decoration: none;
+    max-width: 100%;
+    height: auto;
+}
+.whatsapp {
+    border: 6px solid green;
+    max-width: 5%;
+    height: 10%;
+    border-radius: 6%;
+    background-color: green;
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 5;
+    padding: 8px;
+}
+ 
+.whatsapp .fab {
+    font-size: 1.8em; /* reduced font size */
+}
+@media only screen and (max-width: 600px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Alkatra';
+        background-color: rgb(219, 200, 200);
+    }
+
+    header .logo {
+        width: 50%;
+        height: auto;
+        padding-right: 10px;
+    }
+
+    header .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    header .header-content h1, header .header-content p {
+        font-style: italic;
+        color: rgb(129, 79, 79);
+        padding: 0; /* Remove padding-right */
+    }
+
+    header .header-content h1 {
+        padding-top: .01em;
+    }
+    main {
+        display: flex;
+        flex-direction: row;
+    }
+    main .item-details{
+        font-style:oblique;
+        text-align: center;
+        color: rgb(138, 23, 23);
+        border: 2px solid white;
+        padding: 0px;
+    }
+    .item-details h3{
+        font-size: 15px;
+    }
+    .item-details p{
+        font-size: 17px;
+    }
+    main ul.scroll-container {
+        list-style: none;
+        background-color: #d1a5a5;
+        overflow-x: auto;
+        display: flex;
+        padding: 10px;
+        max-width: 100%;
+        height: auto;
+        border: 10px solid white;
+    }
+    
+    main ul.scroll-container li {
+        flex-grow: 1;
+    }
+    
+    main ul.scroll-container li img {
+        padding: 5px;
+        max-width: 200px;
+    }
+    
+    .whatsapp {
+        border: 6px solid green;
+        max-width: 20%;
+        height: auto;
+        border-radius: 6%;
+        background-color: green;
+        color: white;
+        position: fixed;
+        bottom: 15px;
+        right: 20px;
+        z-index: 5;
+        padding: 8px;
+    }
+
+    .whatsapp .fab {
+        font-size: 2em;
+    }
+}

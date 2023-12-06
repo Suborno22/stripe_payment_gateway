@@ -3,76 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5">
     <link href='https://fonts.googleapis.com/css?family=Alkatra' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="/styles/style.css">
     <title>Variant Basket</title>
 </head>
 <body>
-    <header class="container">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#homepage">Home</a>
+        <a href="#product">Items</a>
+        <a href="#aboutus">About us</a>
+        <a href="#careers">Careers</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    <header class="container" id="homepage">
         <img src="/images/logo.png" class="logo">
         <div class="header-content">
             <h1>Variant Basket</h1>
             <p>Welcome to our online store! <br>
               Find the perfect items for you.</p>
         </div>
-     </header>
+    </header>
      
     <div>
-        <br>Our History <br>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati dolorum, eaque distinctio soluta tempora quisquam aspernatur odit eum corporis nobis, aut rerum optio veritatis aperiam facere libero blanditiis deserunt! Eligendi.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, esse. Officiis delectus impedit officia sapiente vitae, harum nemo mollitia assumenda repellendus. Quos, facilis reprehenderit dignissimos soluta reiciendis illo ullam eius!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum soluta iusto eligendi exercitationem voluptate impedit nemo, vitae alias optio amet illo asperiores ut qui quisquam voluptatum quae architecto beatae! Assumenda?
+        <h2>Details</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati dolorum, eaque distinctio soluta tempora quisquam aspernatur odit eum corporis nobis, aut rerum optio veritatis aperiam facere libero blanditiis deserunt! Eligendi.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, esse. Officiis delectus impedit officia sapiente vitae, harum nemo mollitia assumenda repellendus. Quos, facilis reprehenderit dignissimos soluta reiciendis illo ullam eius!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum soluta iusto eligendi exercitationem voluptate impedit nemo, vitae alias optio amet illo asperiores ut qui quisquam voluptatum quae architecto beatae! Assumenda?</p>
     </div>
-    <main>
-        <h2>New Arrivals</h2>
-        <ul class="item-list">
+    <h2>New Arrivals</h2>
+    <main id="product">
+        <!-- <div class="scroll-buttons">
+            <button onclick="scrollItems('left')">Left</button>
+            <button onclick="scrollItems('right')">Right</button>
+        </div> -->
+        <ul id="item-list" class="scroll-container">
             <li onclick="redirectToCheckout('babydoll', 20000)">
-                
-                <img class="flexible-image" src="./images/doll.webp" alt="Baby Doll">
+                <img class="flexible-image" src="./images/doll-toy-jvp.png" alt="Baby Doll">
                 <div class="item-details">
                     <h3>Baby Doll</h3>
                     <p class="price">Price: <b>Rs 20,000</b></p>
                 </div>
-             
             </li>
 
-            <li onclick="redirectToCheckout('cup', 4000)">
-                
-                <img class="flexible-image" src="/images/cups.jpg" alt="Cup">
+            <li onclick="redirectToCheckout('cup', 4000,'/images/White-Cup-PNG-Picture.png')">
+                <img class="flexible-image" src="/images/White-Cup-PNG-Picture.png" alt="Cup">
                 <div class="item-details">
                     <h3>Cup</h3>
                     <p class="price">Price: <b>Rs 4,000</b></p>
                 </div>
-              
             </li>
 
-            <li onclick="redirectToCheckout('basket', 200)">
-                
-                <img class="flexible-image" src="/images/basket.webp" alt="Basket">
+            <li onclick="redirectToCheckout('basket', 200, '/images/basket-shopping-basket-png-52047.png')">
+                <img class="flexible-image" src="/images/basket-shopping-basket-png-52047.png" alt="Basket">
                 <div class="item-details">
                     <h3>Basket</h3>
                     <p class="price">Price: <b>Rs 200</b></p>
                 </div>
-            
             </li>
 
             <li onclick="redirectToCheckout('trouser', 600)">
-            
                 <img class="flexible-image" src="/images/nail_polish.jpg" alt="Nail Polish">
                 <div class="item-details">
                     <h3>Trouser</h3>
                     <p class="price">Price: <b>Rs 600</b></p>
                 </div>
-              
+            </li>
+            <li onclick="redirectToCheckout('bag', 600)">
+                <img class="flexible-image" src="/images/bag.webp" alt="Bag">
+                <div class="item-details">
+                    <h3>Bag</h3>
+                    <p class="price">Price: <b>Rs 600</b></p>
+                </div>
+            </li>
+            <li onclick="redirectToCheckout('trouser', 1600)">
+                <img class="flexible-image" src="/images/bottle.png" alt="Bottle">
+                <div class="item-details">
+                    <h3>Bottle</h3>
+                    <p class="price">Price: <b>Rs 600</b></p>
+                </div>
             </li>
         </ul>
     </main>
-
-    <script>
-        function redirectToCheckout(item, price) {
-            var checkoutUrl = 'buy_item.php?item=' + item + "&price=" + price;
-            window.location.href = checkoutUrl;
-        }
-    </script>
+    <footer class="details">
+        <p>Thank You, visit us at: varieties@gmail.com</p>
+        <h3>Disclaimer: </h3>
+        <p>We do not allow or encourage acceptance of bribes or any kinds of illegal activities. We are certified under the govt of Ind and we abide by the laws of digita spces</p>
+    </footer>
+    <button onclick="goToWebpage()" class="whatsapp">
+        <i class="fab fa-whatsapp"></i>
+      </button>
+      <a href="tel:7059865917" id="telephone" class="telephone">Call us</a>
+    <script src="./script.js"></script>
 </body>
 </html>
