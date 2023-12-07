@@ -40,7 +40,7 @@
         <button type="button" class="quantity-btn" onclick="updateQuantity('plus')">+</button>
 
         <!-- Display total price -->
-        <p>Total Price: $<strong id="total-price"><?php echo $price ?></strong></p>
+        <p>Total Price: Rs: <strong id="total-price"><?php echo $price ?></strong></p>
         
         <button>
             <a id="checkout">Checkout</a>
