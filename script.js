@@ -1,5 +1,5 @@
 function redirectToCheckout(item, price, image) {
-    var checkoutUrl = 'buy_item.html?item=' + item + "&price=" + price +"&image="+image;
+    var checkoutUrl = 'buy_item.php?item=' + item + "&price=" + price +"&image="+image;
     window.location.href = checkoutUrl;
 }
 function scrollItems(direction) {
