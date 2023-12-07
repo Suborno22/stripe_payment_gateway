@@ -40,10 +40,10 @@
         <button type="button" class="quantity-btn" onclick="updateQuantity('plus')">+</button>
 
         <!-- Display total price -->
-        <p>Total Price: Rs: <strong id="total-price"><?php echo $price ?></strong></p>
+        <p>Total Price: Rs:<strong id="total-price"><?php echo $price ?></strong></p>
         
         <button>
-            <a href=" "checkout.php?item=<?php echo $item ?>&price=<?php echo $price ?>&quantity=" + quantity;">Checkout</a>
+            <a id="checkout">Checkout</a>
         </button>
         <button><a href="index.html">Cancel and Return back</a></button>
     </form>
@@ -67,6 +67,9 @@
 
         document.getElementById('total-price').textContent = totalPrice.toFixed(2);
 
+        // Update the quantity variable in the URL
+        var checkoutLink = document.getElementById("checkout")
+        checkoutLink.href = "checkout.php?item=<?php echo $item ?>&price=<?php echo $price ?>&quantity=" + quantity;
     }
     </script>
 </body>
