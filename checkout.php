@@ -14,8 +14,8 @@ $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : 1;
 // Create the checkout session
 $checkout_session = \Stripe\Checkout\Session::create([
    "mode" => "payment",
-   "success_url" => "http://stripe_payment_gateway/success.php",
-   "cancel_url" => "http://stripe_payment_gateway/index.html",
+   "success_url" => "https://payment-gateway-dt6t.onrender.com/success.php",
+   "cancel_url" => "https://payment-gateway-dt6t.onrender.com/index.html",
    "line_items" => [
        [
            "quantity" => $quantity,
