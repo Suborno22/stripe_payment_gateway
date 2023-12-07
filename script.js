@@ -1,14 +1,14 @@
-function redirectToCheckout(item, price, image) {
-    var checkoutUrl = 'buy_item.php?item=' + item + "&price=" + price +"&image="+image;
+function redirectTodoll() {
+    var checkoutUrl = 'babydoll.html';
     window.location.href = checkoutUrl;
 }
 function scrollItems(direction) {
     const itemList = document.getElementById('item-list');
 
     if (direction === 'left') {
-        itemList.scrollLeft -= 100; // Adjust the scroll amount as needed
+        itemList.scrollLeft -= 100; 
     } else if (direction === 'right') {
-        itemList.scrollLeft += 100; // Adjust the scroll amount as needed
+        itemList.scrollLeft += 100; 
     }
 }
 function openNav() {
