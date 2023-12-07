@@ -43,7 +43,7 @@
         <p>Total Price: $<strong id="total-price"><?php echo $price ?></strong></p>
         
         <button>
-            <a id="checkout" href="checkout.php?item=<?php echo $item ?>&price=<?php echo $price ?>&quantity=1">Checkout</a>
+            <a id="checkout">Checkout</a>
         </button>
         <button><a href="index.html">Cancel and Return back</a></button>
     </form>

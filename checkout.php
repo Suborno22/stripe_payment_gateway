@@ -5,9 +5,11 @@ $sk = "sk_test_51NqCvMSFUB8hRccu7R1yLWaRLnuI3LDvfsfw7k7B8bQz6m9WFhAZ2SX9A8WVk26c
 
 \Stripe\Stripe::setApiKey($sk);
 
-$item = $_GET['item'];
-$price = $_GET['price'];
-$quantity = $_GET['quantity'];
+// print_r($_GET);
+$item = isset($_GET['item']) ? $_GET['item'] : "";
+$price = isset($_GET['price']) ? $_GET['price'] : "";
+$quantity = isset($_GET['quantity']) ? $_GET['quantity'] : 1;
+
 
 // Create the checkout session
 $checkout_session = \Stripe\Checkout\Session::create([
@@ -19,7 +21,7 @@ $checkout_session = \Stripe\Checkout\Session::create([
            "quantity" => $quantity,
            "price_data" => [
                "currency" => "INR",
-               "unit_amount"=> ($price) * 100,
+               "unit_amount"=> floatval($price) * 100,
                "product_data" => [
                   "name" => $item,
                ],
