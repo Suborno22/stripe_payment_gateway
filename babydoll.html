@@ -17,45 +17,62 @@
             font-size:39px;
             white-space: pre-line;
         }
-        #image_container{
+        #flexin_details{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        #image_container:nth-child(1){
             box-sizing: border-box;
             border: 12px solid rgb(218, 206, 139);
             padding: 10px;
             width: fit-content;
             white-space: nowrap;
             overflow: auto;
+            height:fit-content;
         }
         img{
             width: 320px;
             height: auto;
             padding: 10px;
         }
-        #flexin_details{
-            display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
-        }
         #Details{
             border: 1px solid salmon;
-            flex-grow: 1;
             margin-left: 90px;
             padding: 4% 6%;
-            width: fit-content;
-        }
-        #Details{
-            font-size: 22px;
         }
         #buttons{
             display: flex;
             justify-content: space-between;
             padding-top: 25px;
         }
-        button{
+        #buttons button{
             background-color:rgb(236, 175, 84);
             padding: 10px;
             text-decoration: none;
             font-size: 20px;
             border-radius: 12px;
+        }
+        .scroll-buttons{
+            position: absolute;
+            display: flex;
+            width: 50px;
+            justify-content: space-between;
+            gap: 327px;
+            left:57px;
+            top: 82%;
+        }
+        .scroll-buttons button{
+            padding: 26%;
+            background-color:bisque;
+            width:60px;
+            border-radius: 60%;
+            border: 1px solid transparent;
+            height:45px;
+            justify-content: center;
+            text-align: center;
+            font-size: 100%;
+            font-style: bold;
         }
     </style>
 </head>
@@ -64,12 +81,20 @@
         <h3>Item 
             Details:</h3>
     </header>
+    
     <div id="flexin_details">
         <div id="image_container">
-            <img src="/images/618-6181743_baby-doll-hd-png-download.png" alt="Baby doll">
-            <img src="/images/96-967751_download-bebellino-doll-large-doll-baby-doll-transparent.png" alt="bbydll">
-            <img src="/images/baby-doll-115497016567uov8fwmc6.png" alt="">
+            <div id="images">
+                <img src="/images/618-6181743_baby-doll-hd-png-download.png" alt="Baby doll">
+                <img src="/images/96-967751_download-bebellino-doll-large-doll-baby-doll-transparent.png" alt="bbydll">
+                <img src="/images/baby-doll-115497016567uov8fwmc6.png" alt="">
+                <div class="scroll-buttons">
+                    <button onclick="scrollItems('left')">Left</button>
+                    <button onclick="scrollItems('right')">Right</button>
+                </div>
+            </div>
         </div>
+        
         <div id="Details">
             <p>Name: Baby Doll</p>
             <p><b>About this item</b></p>
@@ -126,7 +151,16 @@
             var checkoutUrl = 'index.html';
             window.location.href = checkoutUrl;
         }
+        function scrollItems(direction) {
+            const itemList = document.getElementById('image_container');
+            if (direction === 'left') {
+                itemList.scrollLeft -= 200; 
+            } else if (direction === 'right') {
+                itemList.scrollLeft += 200; 
+            }
+        }
     </script>
 
 </body>
 </html>
+
