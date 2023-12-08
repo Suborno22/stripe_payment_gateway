@@ -291,20 +291,24 @@ footer p:last-child {
     }
     
     .whatsapp {
+        position: absolute;
         border: 6px solid green;
-        max-width: 20%;
-        height: auto;
+        max-width: 17%;
+        height: 7.6%;
         border-radius: 6%;
         background-color: green;
         color: white;
         position: fixed;
-        bottom: 15px;
+        bottom: 20px;
         right: 20px;
         z-index: 5;
         padding: 8px;
     }
-
+     
     .whatsapp .fab {
-        font-size: 2em;
+        position: relative;
+        font-size: 4em; 
+        top: -20px;
+        left: -12px;
     }
 }
