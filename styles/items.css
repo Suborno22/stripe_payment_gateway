@@ -31,6 +31,7 @@ img{
 }
 #Details{
     border: 1px solid salmon;
+    border-radius: 26px;
     margin-left: 90px;
     padding: 4% 6%;
 }
