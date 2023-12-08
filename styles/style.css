@@ -154,19 +154,27 @@ footer p:last-child {
     flex: 1;
 }
   
-  /* .scroll-buttons {
+.scroll-buttons{
+    position: absolute;
     display: flex;
+    width: 50px;
     justify-content: space-between;
-    margin-bottom: 10px;
+    gap: 1139px;
+    left:45px;
+    top: 180%;
 }
-
-.scroll-buttons button {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    cursor: pointer;
-    justify-content: space-between;
-} */
+.scroll-buttons button{
+    padding: 26%;
+    background-color:bisque;
+    width:60px;
+    border-radius: 60%;
+    border: 1px solid transparent;
+    height:45px;
+    justify-content: center;
+    text-align: center;
+    font-size: 100%;
+    font-style: bold;
+}
 .telephone {
     position: fixed;
     bottom: 20px;
@@ -288,6 +296,28 @@ footer p:last-child {
     main ul.scroll-container li img {
         padding: 5px;
         max-width: 200px;
+    }
+
+    .scroll-buttons{
+        position: absolute;
+        display: flex;
+        width: 50px;
+        justify-content: space-between;
+        gap: 240px;
+        left:10px;
+        top: 198%;
+    }
+    .scroll-buttons button{
+        padding: 46%;
+        background-color:bisque;
+        width:60px;
+        border-radius: 60%;
+        border: 1px solid black;
+        height:45px;
+        justify-content: center;
+        text-align: center;
+        font-size: 100%;
+        font-style: bold;
     }
     
     .whatsapp {
