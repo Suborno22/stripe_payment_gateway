@@ -11,6 +11,7 @@ header h3{
     white-space: pre-line;
 }
 #flexin_details{
+    position: relative;
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
@@ -18,15 +19,16 @@ header h3{
 #image_container:nth-child(1){
     box-sizing: border-box;
     border: 12px solid rgb(218, 206, 139);
-    padding: 10px;
+    padding: 3px;
+    width: 325px;
     width: fit-content;
     white-space: nowrap;
     overflow: auto;
     height:fit-content;
 }
 img{
-    width: 320px;
-    height: auto;
+    width: 260px;
+    height: 322px;
     padding: 10px;
 }
 #Details{
@@ -48,14 +50,15 @@ img{
     border-radius: 12px;
 }
 .scroll-buttons{
-    position: absolute;
-    display: flex;
-    width: 50px;
-    justify-content: space-between;
-    gap: 327px;
-    left:57px;
-    top: 82%;
+   position: absolute;
+   display: flex;
+   width: 50px;
+   justify-content: space-between;
+   gap: 285px;
+   left:-25px;
+   top: 30%;
 }
+
 .scroll-buttons button{
     padding: 26%;
     background-color:bisque;
@@ -68,76 +71,56 @@ img{
     font-size: 100%;
     font-style: bold;
 }
-@media only screen and (max-width: 600px) {
-    body{
-        padding: 3%;
-    }
+@media screen and (max-width: 768px) {
     header{
-        background-color: blanchedalmond;
-        width: fit-content;
-        padding: 5px 15px;
+        padding: 10px;
     }
     header h3{
-        font-size:20px;
-        white-space: pre-line;
+        font-size: 24px;
     }
     #flexin_details{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-top: 40px;
+        display: block;
+        margin-top: 20px;
     }
-    #image_container:nth-child(1){
-        box-sizing: border-box;
-        border: 5px solid rgb(218, 206, 139);
-        padding: 2px;
-        width: 368px;
-        height: auto;
-        white-space: nowrap;
+    #image_container{
         overflow: auto;
-        height:fit-content;
-    }
-    img{
-        height: auto;
+        white-space: nowrap;
         padding: 10px;
+        margin-bottom: 52px;
+    }
+    #image_container img{
+        width: 60%;
+        height: auto;
+        margin: 5px;
     }
     #Details{
-        margin-top: 30px;
-        border: 1px solid salmon;
-        margin-left: 1px;
-        padding: 4% 6%;
+        margin-left: 0;
     }
     #buttons{
-        display: flex;
-        justify-content: space-between;
-        padding-top: 25px;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
     }
     #buttons button{
-        background-color:rgb(236, 175, 84);
-        padding: 10px;
-        text-decoration: none;
-        font-size: 20px;
-        border-radius: 12px;
+        margin: 10px auto;
+        width: 80%;
     }
     .scroll-buttons{
-        position: absolute;
-        display: flex;
-        width: 50px;
-        justify-content: space-between;
-        gap: 295px;
-        left:-5px;
-        top: 39%;
+        position: sticky;
+        display:block;
+        margin: 10px;
+        top: auto;
+        left: 0;
+        z-index: 12;
+        width: 150px;
     }
     .scroll-buttons button{
-        padding: 26%;
-        background-color:bisque;
-        width:60px;
-        border-radius: 60%;
-        border: 1px solid transparent;
-        height:45px;
-        justify-content: center;
-        text-align: center;
-        font-size: 100%;
-        font-style: bold;
+        position: relative;
+        display: inline-block;
+        margin: 10px;
+        width: 40%;
+        padding: 10%;
+        font-size: 14px;
     }
 }
+
