@@ -24,6 +24,9 @@ RUN apt-get update && \
 # Install project dependencies using Composer
 RUN composer install --no-dev --optimize-autoloader
 
+#run composer required stripe/stripe-php
+RUN composer require stripe/stripe-php
+
 # Apache configuration
 RUN a2enmod rewrite
 

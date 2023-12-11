@@ -6,7 +6,6 @@
         }
     },
     "require": {
-        "stripe/stripe-php": "^13.4",
         "rajathans/shiprocket-php": "^1.0"
     }
 }
