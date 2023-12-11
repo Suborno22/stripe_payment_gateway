@@ -48,7 +48,7 @@
 
     <script>
     // Function to update quantity and total price
-        function updateQuantity(action, item, price) {
+    function updateQuantity(action, item, price) {
         var quantityInput = document.querySelector('input[name="quantity"]');
         var quantity = parseInt(quantityInput.value);
 
@@ -66,9 +66,9 @@
         document.getElementById('total-price').textContent = totalPrice.toFixed(2);
 
         var checkoutLink = document.getElementById("checkout");
-        checkoutLink.href = 'checkout.php?item=' + item + '&price=' + price + '&quantity=' + quantity;
+        checkoutLink.href = 'checkout.php?item=' + encodeURIComponent(item) + '&price=' + encodeURIComponent(price) + '&quantity=' + quantity;
     }
-
 </script>
+
 </body>
 </html>
