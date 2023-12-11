@@ -22,8 +22,8 @@
 </head>
 <body>
     <?php
-        $item = htmlspecialchars($_GET['item']);
-        $price = htmlspecialchars($_GET['price']);
+        $item = $_GET['item'];
+        $price =$_GET['price'];
     ?>
     <header>
         <h1>Items</h1>
@@ -66,7 +66,7 @@
             document.getElementById('total-price').textContent = totalPrice.toFixed(2);
 
             var checkoutLink = document.getElementById("checkout");
-            checkoutLink.href = 'checkout.php?item=<?php echo $item ?>&price=<?php echo $price ?>&quantity=' + quantity;
+            checkoutLink.href = 'checkout.php?item='$item'&price='$price'&quantity=' + quantity;
         }
     </script>
 </body>
