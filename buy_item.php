@@ -47,27 +47,29 @@
     </form>
 
     <script>
-        // Function to update quantity and total price
-        function updateQuantity(action) {
-            var quantityInput = document.querySelector('input[name="quantity"]');
-            var quantity = parseInt(quantityInput.value);
+    // Function to update quantity and total price
+    function updateQuantity(action) {
+        var quantityInput = document.querySelector('input[name="quantity"]');
+        var quantity = parseInt(quantityInput.value);
 
-            if (action === 'plus') {
-                quantity += 1;
-            } else if (action === 'minus' && quantity > 1) {
-                quantity -= 1;
-            }
-
-            quantityInput.value = quantity;
-
-            var itemPrice = parseFloat(<?php echo $price; ?>);
-            var totalPrice = quantity * itemPrice;
-
-            document.getElementById('total-price').textContent = totalPrice.toFixed(2);
-
-            var checkoutLink = document.getElementById("checkout");
-            checkoutLink.href = 'checkout.php?item=<?php echo $item ?>&price=<?php echo $price ?>&quantity=' + quantity;
+        if (action === 'plus') {
+            quantity += 1;
+        } else if (action === 'minus' && quantity > 1) {
+            quantity -= 1;
         }
-    </script>
+
+        quantityInput.value = quantity;
+
+        var item = "<?php echo $item; ?>";
+        var price = "<?php echo $price; ?>";
+        var itemPrice = parseFloat(price);
+        var totalPrice = quantity * itemPrice;
+
+        document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+
+        var checkoutLink = document.getElementById("checkout");
+        checkoutLink.href = 'checkout.php?item=' + encodeURIComponent(item) + '&price=' + encodeURIComponent(price) + '&quantity=' + quantity;
+    }
+</script>
 </body>
 </html>
