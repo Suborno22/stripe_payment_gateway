@@ -33,9 +33,9 @@
         <p>Price: <strong id="item-price"><?php echo $price; ?></strong></p>
         
         <!-- Plus and minus buttons for quantity -->
-        <button type="button" class="quantity-btn" onclick="updateQuantity('minus')">-</button>
+        <button type="button" class="quantity-btn" onclick="updateQuantity('minus', '<?php echo $item; ?>', '<?php echo $price; ?>')">-</button>
         <input type="text" name="quantity" value="1">
-        <button type="button" class="quantity-btn" onclick="updateQuantity('plus')">+</button>
+        <button type="button" class="quantity-btn" onclick="updateQuantity('plus', '<?php echo $item; ?>', '<?php echo $price; ?>')">+</button>
 
         <!-- Display total price -->
         <p>Total Price: Rs:<strong id="total-price"><?php echo number_format($price, 2); ?></strong></p>
@@ -48,7 +48,7 @@
 
     <script>
     // Function to update quantity and total price
-    function updateQuantity(action) {
+        function updateQuantity(action, item, price) {
         var quantityInput = document.querySelector('input[name="quantity"]');
         var quantity = parseInt(quantityInput.value);
 
@@ -60,16 +60,15 @@
 
         quantityInput.value = quantity;
 
-        var item = "<?php echo $item; ?>";
-        var price = "<?php echo $price; ?>";
         var itemPrice = parseFloat(price);
         var totalPrice = quantity * itemPrice;
 
         document.getElementById('total-price').textContent = totalPrice.toFixed(2);
 
         var checkoutLink = document.getElementById("checkout");
-        checkoutLink.href = 'checkout.php?item=' + encodeURIComponent(item) + '&price=' + encodeURIComponent(price) + '&quantity=' + quantity;
+        checkoutLink.href = 'checkout.php?item=' + item + '&price=' + price + '&quantity=' + quantity;
     }
+
 </script>
 </body>
 </html>
