@@ -313,7 +313,7 @@
         max-width: 40%;
         height: auto;
       }
-      /* .whatsapp {
+      .whatsapp {
         position: relative;
         border: 6px solid green;
         width: 69px;
@@ -334,5 +334,5 @@
         font-size: 4em;
         top: -22px;
         left: -13.9px;
-    } */
+    }
 }
