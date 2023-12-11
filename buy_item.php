@@ -66,7 +66,7 @@
             document.getElementById('total-price').textContent = totalPrice.toFixed(2);
 
             var checkoutLink = document.getElementById("checkout");
-            checkoutLink.href = 'checkout.php?item='$item'&price='$price'&quantity=' + quantity;
+            checkoutLink.href = 'checkout.php?item=<?php echo $item ?>&price=<?php echo $price ?>&quantity=' + quantity;
         }
     </script>
 </body>
