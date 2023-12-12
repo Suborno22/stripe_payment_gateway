@@ -16,27 +16,17 @@ if (empty($item)) {
     exit;
 }
 
-// Create the checkout session
-$checkout_session = \Stripe\Checkout\Session::create([
-    "mode" => "payment",
-    "success_url" => "https://payment-gateway-dt6t.onrender.com/success.php",
-    "cancel_url" => "https://payment-gateway-dt6t.onrender.com/index.html",
-    "line_items" => [
-        [
-            "quantity" => $quantity,
-            "price_data" => [
-                "currency" => "INR",
-                "unit_amount" => floatval($price) * 100,
-                "product_data" => [
-                    "name" => $item,
-                ],
-            ],
-        ],
-    ],
+$stripe = new \Stripe\StripeClient('sk_test_51NqCvMSFUB8hRccu7R1yLWaRLnuI3LDvfsfw7k7B8bQz6m9WFhAZ2SX9A8WVk26cskglAXwhChbky4LpiL1yYd2000KB2NWcuV'
+
+);
+
+$stripe->paymentIntents->create
+([
+  'amount' => $price,
+  'currency' => 'inr',
+  'automatic_payment_methods' => ['enabled' => true],
+  'application_fee_amount' =>[ ]
+
 ]);
-// Redirect to checkout page
-http_response_code(303);
-header("Location:".$checkout_session->url);
-// Add this in your checkout.php for debugging
-error_log("Checkout session created successfully: " . $checkout_session->id);
+
 ?>

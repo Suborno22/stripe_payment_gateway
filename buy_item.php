@@ -34,15 +34,19 @@
         
         <!-- Plus and minus buttons for quantity -->
         <button type="button" class="quantity-btn" onclick="updateQuantity('minus', '<?php echo $item; ?>', '<?php echo $price; ?>')">-</button>
-        <input type="text" name="quantity" value="1">
+        <!-- Make the quantity field read-only -->
+        <input type="text" id="quantity" name="quantity" value="1" readonly>
         <button type="button" class="quantity-btn" onclick="updateQuantity('plus', '<?php echo $item; ?>', '<?php echo $price; ?>')">+</button>
 
         <!-- Display total price -->
         <p>Total Price: Rs:<strong id="total-price"><?php echo number_format($price, 2); ?></strong></p>
+
+        <!-- Add hidden input fields for item and price -->
+        <input type="hidden" name="item" value="<?php echo $item; ?>">
+        <input type="hidden" name="price" value="<?php echo $price; ?>">
         
-        <button>
-            <a id="checkout" href='checkout.php?item=<?php echo $item ?>&price=<?php echo $price ?>&quantity=1'>Checkout</a>
-        </button>
+        <!-- Submit the form directly without JavaScript -->
+        <button type="submit">Checkout</button>
         <button><a href="index.html">Cancel and Return back</a></button>
     </form>
 
@@ -66,7 +70,7 @@
         document.getElementById('total-price').textContent = totalPrice.toFixed(2);
 
         var checkoutLink = document.getElementById("checkout");
-        checkoutLink.href = 'checkout.php?item=' + encodeURIComponent(item) + '&price=' + encodeURIComponent(price) + '&quantity=' + quantity;
+        checkoutLink.href = 'checkout.php?quantity=' + quantity + '&item=' + encodeURIComponent(item) + '&price=' + encodeURIComponent(price);
     }
 </script>
 
