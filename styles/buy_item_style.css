@@ -3,68 +3,62 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Alkatra', sans-serif;
 }
 
 body {
-    font-family: 'Alkatra', sans-serif;
-    background-color: #f2f2f2;
+    background-color: #F7F7F7;
 }
 
-h1, h2, p {
-    margin: 10px;
+h1, h2 {
     text-align: center;
+    margin: 20px;
 }
 
-img {
-    display: block;
-    margin: 10px auto;
-    width: 160px;
-    height: auto;
-}
-
-button {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(175, 129, 76);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+p {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px;
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: #b0e9e9;
+    font-size: 18px;
 }
 
 a:hover {
-    color: #f2f2f2;
+    color: #2957B3;
 }
 
-/* Header styles */
-header {
-    background-color: #af844c;
-    text-align: center;
-    padding: 20px;
-    color: white;
-}
-
-/* Form styles */
 form {
-    max-width: 500px;
-    margin: 20px auto;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Add some basic styling for the buttons */
-.quantity-btn {
+form button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #030a16;
+    color: #FFFFFF;
+    font-size: 18px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    padding: 5px 10px;
-    margin: 0 5px;
+}
+
+form button:hover {
+    background-color: #ececec;
+}
+
+.quantity-btn{
+    color: white;
 }

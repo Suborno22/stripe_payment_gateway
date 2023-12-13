@@ -6,7 +6,7 @@
     
     <meta http-equiv="refresh" content="15">
     <link href='https://fonts.googleapis.com/css?family=Alkatra' rel='stylesheet'>
-    <link rel="stylesheet" href="styles/buy_item_style.css">
+    <link rel="stylesheet" href="/styles/buy_item_style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
     <title>Checkout</title>
 </head>
