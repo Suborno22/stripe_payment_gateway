@@ -1,32 +1,15 @@
 <?php
-require __DIR__ . "/vendor/autoload.php";
 
-$sk = "sk_test_51NqCvMSFUB8hRccu7R1yLWaRLnuI3LDvfsfw7k7B8bQz6m9WFhAZ2SX9A8WVk26cskglAXwhChbky4LpiL1yYd2000KB2NWcuV";
+$data = [ 
+    'user_id' => '1',
+    'payment_id' => $_POST['razorpay_payment_id'],
+    'amount' => $_POST['totalAmount'],
+   ];
 
-\Stripe\Stripe::setApiKey($sk);
+// you can write your database insertation code here
+// after successfully insert transaction in database, pass the response accordingly
+$arr = array('msg' => 'Payment successfully credited', 'status' => true);  
 
-// print_r($_GET);
-$item = htmlspecialchars($_GET['item']);
-$price = htmlspecialchars($_GET['price']);
-$quantity = isset($_GET['quantity']) ? $_GET['quantity'] : 1;
-
-if (empty($item)) {
-    // Handle the error, you can redirect or display an error message
-    echo "Error: Item name is empty";
-    exit;
-}
-
-$stripe = new \Stripe\StripeClient('sk_test_51NqCvMSFUB8hRccu7R1yLWaRLnuI3LDvfsfw7k7B8bQz6m9WFhAZ2SX9A8WVk26cskglAXwhChbky4LpiL1yYd2000KB2NWcuV'
-
-);
-
-$stripe->paymentIntents->create
-([
-  'amount' => $price,
-  'currency' => 'inr',
-  'automatic_payment_methods' => ['enabled' => true],
-  'application_fee_amount' =>[ ]
-
-]);
+echo json_encode($arr);
 
 ?>
